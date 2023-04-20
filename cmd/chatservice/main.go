@@ -54,8 +54,8 @@ func main() {
 
 	usecase := chatcompletion.NewChatCompletionUseCase(repo, client)
 
-	streamChannel := make(chan chatcompletionstream.ChatCompletionOutputDTO)
-	usecaseStream := chatcompletionstream.NewChatCompletionUseCase(repo, client, streamChannel)
+	// streamChannel := make(chan chatcompletionstream.ChatCompletionOutputDTO)
+	// usecaseStream := chatcompletionstream.NewChatCompletionUseCase(repo, client, streamChannel)
 
 	// fmt.Println("Starting gRPC server on port " + configs.GRPCServerPort)
 	// grpcServer := server.NewGRPCServer(

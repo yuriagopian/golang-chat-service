@@ -54,6 +54,10 @@ func (c *Chat) CountMessages() int {
 	return len(c.Messages)
 }
 
+func (c *Chat) End() {
+	c.Status = "ended"
+}
+
 func (c *Chat) RefreshTokenUsage() {
 	c.TokenUsage = 0
 

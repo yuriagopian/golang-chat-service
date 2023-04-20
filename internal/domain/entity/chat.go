@@ -50,6 +50,10 @@ func (c *Chat) GetMessages() []*Message {
 	return c.Messages
 }
 
+func (c *Chat) CountMessages() int {
+	return len(c.Messages)
+}
+
 func (c *Chat) RefreshTokenUsage() {
 	c.TokenUsage = 0
 

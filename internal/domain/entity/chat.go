@@ -35,6 +35,11 @@ func (c *Chat) AddMessage(m *Message) error {
 			c.RefreshTokenUsage()
 			break
 		}
+
+		c.ErasedMessages = append(c.ErasedMessages, c.Messages[0])
+		// Remove mensagem mais antiga da lista de mensagens
+		c.Messages = c.Messages[1:]
+		c.RefreshTokenUsage()
 	}
 
 	return nil

@@ -11,7 +11,6 @@ import (
 	"github.com/yuriagopian/golang-chat-service/internal/infra/web"
 	"github.com/yuriagopian/golang-chat-service/internal/infra/web/webserver"
 	"github.com/yuriagopian/golang-chat-service/internal/usecases/chatcompletion"
-	"github.com/yuriagopian/golang-chat-service/internal/usecases/chatcompletionstream"
 )
 
 func main() {
@@ -41,16 +40,16 @@ func main() {
 		InitialSystemMessage: configs.InitialChatMessage,
 	}
 
-	chatConfigStream := chatcompletionstream.ChatCompletionConfigInputDTO{
-		Model:                configs.Model,
-		ModelMaxTokens:       configs.ModelMaxTokens,
-		Temperature:          float32(configs.Temperature),
-		TopP:                 float32(configs.TopP),
-		N:                    configs.N,
-		Stop:                 configs.Stop,
-		MaxTokens:            configs.MaxTokens,
-		InitialSystemMessage: configs.InitialChatMessage,
-	}
+	// chatConfigStream := chatcompletionstream.ChatCompletionConfigInputDTO{
+	// 	Model:                configs.Model,
+	// 	ModelMaxTokens:       configs.ModelMaxTokens,
+	// 	Temperature:          float32(configs.Temperature),
+	// 	TopP:                 float32(configs.TopP),
+	// 	N:                    configs.N,
+	// 	Stop:                 configs.Stop,
+	// 	MaxTokens:            configs.MaxTokens,
+	// 	InitialSystemMessage: configs.InitialChatMessage,
+	// }
 
 	usecase := chatcompletion.NewChatCompletionUseCase(repo, client)
 

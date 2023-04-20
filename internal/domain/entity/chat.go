@@ -28,6 +28,7 @@ func (c *Chat) AddMessage(m *Message) error {
 		return errors.New("chat is ended. no more messages allowed")
 	}
 
+	// enquanto não couber ele apaga as mais antigas
 	for {
 		if c.Config.Model.GetMaxTokens() >= m.GetQtdTokens()+c.TokenUsage {
 			c.Messages = append(c.Messages, m)
@@ -43,6 +44,10 @@ func (c *Chat) AddMessage(m *Message) error {
 	}
 
 	return nil
+}
+
+func (c *Chat) GetMessages() []*Message {
+	return c.Messages
 }
 
 func (c *Chat) RefreshTokenUsage() {

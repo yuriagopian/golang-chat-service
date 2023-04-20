@@ -7,9 +7,9 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: chat
+      MYSQL_DATABASE: chat_test
       MYSQL_UUSER: root
     ports:
       - 3306:3306
     volumes:
-      - ./.docker/mysql:/var/lib/mysql
+      - .docker/mysql:/var/lib/mysql
